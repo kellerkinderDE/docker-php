@@ -7,6 +7,7 @@ USER root
 RUN apt-get update -yqq \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
     re2c \
+    ghostscript \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 RUN pecl install mailparse && \
