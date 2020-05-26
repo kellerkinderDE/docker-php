@@ -17,3 +17,5 @@ RUN pecl install mailparse && \
     docker-php-ext-enable mailparse
 
 USER $IMAGE_USER
+
+WORKDIR /var/www/html
