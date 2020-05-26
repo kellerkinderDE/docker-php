@@ -2,8 +2,8 @@ FROM edbizarro/gitlab-ci-pipeline-php:7.3
 
 MAINTAINER Uwe Kleinmann <u.kleinmann@kellerkinder.de>
 
-RUN apt-get update -yqq \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+RUN sudo apt-get update -yqq \
+    && DEBIAN_FRONTEND=noninteractive sudo apt-get install -y --no-install-recommends \
     libpq-dev \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
@@ -16,7 +16,7 @@ RUN apt-get update -yqq \
     libicu-dev \
     libzip-dev \
     unzip \
-    && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
+    && sudo rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 RUN pecl install imagick mailparse && \
     docker-php-ext-enable imagick && \
